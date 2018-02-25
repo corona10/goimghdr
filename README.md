@@ -29,6 +29,9 @@ go get github.com/corona10/goimghdr
 | "exr"  | OpenEXR Files                     |
 
 ## Usage
+
+[example](examples/example.go)
+
 [![asciicast](https://asciinema.org/a/zfh9TERizU7RcSAxXo9ioKQq4.png)](https://asciinema.org/a/zfh9TERizU7RcSAxXo9ioKQq4)
 
 ## Special thanks to
