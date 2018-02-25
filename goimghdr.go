@@ -32,12 +32,15 @@ func What(file string) (string, error) {
 	var what string
 	var nBytes int
 	f, err := os.Open(file)
-	defer f.Close()
 	if err != nil {
 		return "", err
 	}
+	defer f.Close()
 	hdr := make([]byte, 32)
 	nBytes, err = f.Read(hdr)
+	if err != nil {
+		return "", err
+	}
 	if nBytes < 32 {
 		msg := fmt.Sprintf("The target file size should be at least 32 bytes: %d bytes", nBytes)
 		return "", errors.New(msg)
