@@ -39,7 +39,7 @@ import (
 )
 
 func main() {
-        ret, _ := goimghdr.What("filepath")
+        ret, _ := goimghdr.What("filepath/sample.jpeg")
         fmt.Println(ret)
 }
 ```
