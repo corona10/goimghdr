@@ -7,6 +7,7 @@ package goimghdr
 import (
 	"errors"
 	"fmt"
+	"io"
 	"os"
 	"strings"
 )
@@ -27,17 +28,25 @@ const (
 	webp = "webp"
 )
 
-// What returns image header.
+// WhatFromReader returns a string value of image header from Reader.
+func WhatFromReader(r io.Reader) (string, error) {
+	return whatImpl(r)
+}
+
+// What returns a string value of image header.
 func What(file string) (string, error) {
-	var what string
-	var nBytes int
 	f, err := os.Open(file)
 	if err != nil {
 		return "", err
 	}
 	defer f.Close()
+	return whatImpl(f)
+}
+
+func whatImpl(r io.Reader) (string, error) {
+	var what string
 	hdr := make([]byte, 32)
-	nBytes, err = f.Read(hdr)
+	nBytes, err := r.Read(hdr)
 	if err != nil {
 		return "", err
 	}

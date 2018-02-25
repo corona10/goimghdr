@@ -5,6 +5,7 @@
 package goimghdr
 
 import (
+	"os"
 	"testing"
 )
 
@@ -99,6 +100,29 @@ func TestGoImghdr(t *testing.T) {
 	}
 
 	t.Logf("total %d imghdr tests are passed", len(goimghdrTests))
+}
+
+func TestGoImghdrReader(t *testing.T) {
+	for _, ght := range goimghdrTests {
+		var ret string
+		path := ght.Path
+		expected := ght.Expected
+		f, err := os.Open(path)
+		if err != nil {
+			t.Fatal(err)
+		}
+		defer f.Close()
+		ret, err = WhatFromReader(f)
+		if err != nil {
+			t.Fatal(err)
+		}
+
+		if ret != expected {
+			t.Fatalf("WhatFromReader(%v): got %s, want %s", f, ret, expected)
+		}
+	}
+
+	t.Logf("total %d imghdr from reader tests are passed", len(goimghdrTests))
 }
 
 func TestInvalid(t *testing.T) {

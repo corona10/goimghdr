@@ -29,20 +29,7 @@ go get github.com/corona10/goimghdr
 | "exr"  | OpenEXR Files                     |
 
 ## Usage
-```go
-package main
-
-import (
-        "fmt"
-
-        "github.com/corona10/goimghdr"
-)
-
-func main() {
-        ret, _ := goimghdr.What("filepath/sample.jpeg")
-        fmt.Println(ret)
-}
-```
+[![asciicast](https://asciinema.org/a/zfh9TERizU7RcSAxXo9ioKQq4.png)](https://asciinema.org/a/zfh9TERizU7RcSAxXo9ioKQq4)
 
 ## Special thanks to
 * [Haeun Kim](https://github.com/haeungun/)
