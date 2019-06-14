@@ -1,6 +1,7 @@
 [![Build Status](https://travis-ci.org/corona10/goimghdr.svg?branch=master)](https://travis-ci.org/corona10/goimghdr)
 [![GoDoc](https://godoc.org/github.com/corona10/goimghdr?status.svg)](https://godoc.org/github.com/corona10/goimghdr)
 [![Go Report Card](https://goreportcard.com/badge/github.com/corona10/goimghdr)](https://goreportcard.com/report/github.com/corona10/goimghdr)
+[![Coverage Status](https://coveralls.io/repos/github/corona10/goimghdr/badge.svg?branch=coverall)](https://coveralls.io/github/corona10/goimghdr?branch=coverall)
 
 # goimghdr
 > Inspired by Python's [imghdr](https://docs.python.org/3/library/imghdr.html)
